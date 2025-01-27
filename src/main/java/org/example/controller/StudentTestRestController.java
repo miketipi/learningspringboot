@@ -30,12 +30,13 @@ public class StudentTestRestController {
         return new StudentTest("New", "Me");
     }
 
-    @ExceptionHandler
-    public ResponseEntity<StudentErrorResponse> handleStudentNotFoundException (StudentNotFoundException exception){
-        StudentErrorResponse resp = new StudentErrorResponse();
-        resp.setStatus(HttpStatus.NOT_FOUND.value());
-        resp.setMessage(exception.getMessage());
-        resp.setTimeStamp(System.currentTimeMillis());
-        return new ResponseEntity<>(resp, HttpStatus.NOT_FOUND);
-    }
+    //Exception handler code is only for this rest controller => needs global exception handler
+//    @ExceptionHandler
+//    public ResponseEntity<StudentErrorResponse> handleStudentNotFoundException(StudentNotFoundException exception) {
+//        StudentErrorResponse resp = new StudentErrorResponse();
+//        resp.setStatus(HttpStatus.NOT_FOUND.value());
+//        resp.setMessage(exception.getMessage());
+//        resp.setTimeStamp(System.currentTimeMillis());
+//        return new ResponseEntity<>(resp, HttpStatus.NOT_FOUND);
+//    }
 }

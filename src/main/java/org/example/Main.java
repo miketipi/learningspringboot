@@ -16,17 +16,17 @@ public class Main {
         SpringApplication.run(Main.class, args);
     }
 
-    @Bean
-    public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
-        return runner -> {
-            System.out.println("This is the command line runner");
-//            createStudent(studentDAO);
-//            readStudent(studentDAO);
-//            getAllStudent(studentDAO);
-//            updateStudent(studentDAO);
-//            deleteStudent(studentDAO);
-        };
-    }
+//    @Bean
+//    public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
+//        return runner -> {
+//            System.out.println("This is the command line runner");
+////            createStudent(studentDAO);
+////            readStudent(studentDAO);
+////            getAllStudent(studentDAO);
+////            updateStudent(studentDAO);
+////            deleteStudent(studentDAO);
+//        };
+//    }
 
     private void createStudent(StudentDAO studentDAO) {
         Student tempStudent = new Student("Paul", "Doe", "alo");
