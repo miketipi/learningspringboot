@@ -11,6 +11,11 @@ spring:
   data:
     rest:
       # this define the base path before accessing to the rest repo
-      base-path: nhanvien
+      base-path: api
 #      default-page-size:
 #      max-page-size:
+  #use these configurations to add default user name and user password
+  security:
+    user:
+      name: user
+      password: test
