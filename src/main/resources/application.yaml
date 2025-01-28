@@ -8,3 +8,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+  data:
+    rest:
+      # this define the base path before accessing to the rest repo
+      base-path: nhanvien
+#      default-page-size:
+#      max-page-size:
