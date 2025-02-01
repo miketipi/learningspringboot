@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,25 @@ public class DemoControllerForThymeLeaf {
 
     @RequestMapping("/processForm")
     public String processForm(){
+        return "helloworld";
+    }
+
+    //Model is the data which can be used by the templates
+    @RequestMapping("/processFormVersionTwo")
+    public String letsShoutDude(HttpServletRequest request, Model model){
+        //read data from the url
+        String theName = request.getParameter("studentName");
+
+        //convert to upper case
+        theName = theName.toUpperCase();
+
+        //create some new message
+
+        String message = "Hello Bro" + theName;
+
+        //add message to the model
+        model.addAttribute("message", message);
+
         return "helloworld";
     }
 }
