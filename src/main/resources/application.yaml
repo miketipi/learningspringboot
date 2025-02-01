@@ -2,9 +2,20 @@ spring:
   application:
     name: demo
   datasource:
-    url: jdbc:mysql://localhost:3306/student_tracker
+    url: jdbc:mysql://localhost:3306/employee_directory
     username: springstudent
     password: springstudent
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+  data:
+    rest:
+      # this define the base path before accessing to the rest repo
+      base-path: api
+#      default-page-size:
+#      max-page-size:
+  #use these configurations to add default user name and user password
+  security:
+    user:
+      name: user
+      password: test

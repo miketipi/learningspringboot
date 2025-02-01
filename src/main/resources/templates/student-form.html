@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World - Input Form</title>
+</head>
+<body>
+<!-- {student} is equals to the new StudentForThymeleaf I created -->
+<form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
+    <!-- when a page is called ,*{lastName} is equals to student.getLastName(), with the dafault value -->
+    First name: <input type="text" th:field="*{firstName}" />
+    <br><br>
+    <!--when the form is summitted *{lastName} is equals to student.setLastName() -->
+    Last name: <input type="text" th:field="*{lastName}" />
+    <br><br>
+    <select th:field="*{country}">
+        <option th:value="Brazil">Brazil</option>
+        <option th:value="France">France</option>
+        <option th:value="Germany">Germany</option>
+        <option th:value="India">India</option>
+    </select>
+    <br><br>
+    Favorite Programming Language:
+    <input type="radio" th:field="*{favoriteLanguage}" th:value="Go">Go</input>
+    <input type="radio" th:field="*{favoriteLanguage}" th:value="Java">Java</input>
+    <input type="radio" th:field="*{favoriteLanguage}" th:value="Python">Python</input>
+    <br><br>
+    <input type="checkbox" th:field="*{favoriteOperatingSystem}" th:value="Linux">Linux</input>
+    <input type="checkbox" th:field="*{favoriteOperatingSystem}" th:value="macOS">macOS</input>
+    <input type="checkbox" th:field="*{favoriteOperatingSystem}"
+           th:value="'Microsoft Windows'">Microsoft Windows</input>
+    <br><br>
+    <input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>
