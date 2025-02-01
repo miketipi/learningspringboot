@@ -26,6 +26,11 @@
     <input type="radio" th:field="*{favoriteLanguage}" th:value="Java">Java</input>
     <input type="radio" th:field="*{favoriteLanguage}" th:value="Python">Python</input>
     <br><br>
+    <input type="checkbox" th:field="*{favoriteOperatingSystem}" th:value="Linux">Linux</input>
+    <input type="checkbox" th:field="*{favoriteOperatingSystem}" th:value="macOS">macOS</input>
+    <input type="checkbox" th:field="*{favoriteOperatingSystem}"
+           th:value="'Microsoft Windows'">Microsoft Windows</input>
+    <br><br>
     <input type="submit" value="Submit" />
 </form>
 

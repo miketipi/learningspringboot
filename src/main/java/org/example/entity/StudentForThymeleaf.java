@@ -2,6 +2,8 @@ package org.example.entity;
 
 import lombok.*;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -9,17 +11,29 @@ public class StudentForThymeleaf {
     private String firstName;
     private String lastName;
     private String country;
-    private String favoriteLanguage;
+    private List<String> favoriteLanguage;
+    //with multiple choices, spring will automagically concat all object into a String with a delimeter
+    //This student favorite operating system is: Linux,macOS,Microsoft Windows
+    //The true definition we can use here can be List<String>
+    private String favoriteOperatingSystem;
 
     public String getFirstName() {
         return firstName;
     }
 
-    public String getFavoriteLanguage() {
+    public String getFavoriteOperatingSystem() {
+        return favoriteOperatingSystem;
+    }
+
+    public void setFavoriteOperatingSystem(String favoriteOperatingSystem) {
+        this.favoriteOperatingSystem = favoriteOperatingSystem;
+    }
+
+    public List<String> getFavoriteLanguage() {
         return favoriteLanguage;
     }
 
-    public void setFavoriteLanguage(String favoriteLanguage) {
+    public void setFavoriteLanguage(List<String> favoriteLanguage) {
         this.favoriteLanguage = favoriteLanguage;
     }
 
