@@ -39,13 +39,15 @@ public class DemoSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(configurer ->
-                configurer.requestMatchers(HttpMethod.GET, "/api/employees").hasRole("EMPLOYEE")
-                        .requestMatchers(HttpMethod.GET, "/api/employees/**").hasRole("EMPLOYEE")
-                        .requestMatchers(HttpMethod.PUT, "/api/employees").hasRole("MANAGER")
-                        .requestMatchers(HttpMethod.DELETE, "/api/employees").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET, "/test").permitAll()
-                        //browser cannot get css because not be authenciated
-                        .requestMatchers(HttpMethod.GET, "/css/**").permitAll());
+//                configurer.requestMatchers(HttpMethod.GET, "/api/employees").hasRole("EMPLOYEE")
+//                        .requestMatchers(HttpMethod.GET, "/api/employees/**").hasRole("EMPLOYEE")
+//                        .requestMatchers(HttpMethod.PUT, "/api/employees").hasRole("MANAGER")
+//                        .requestMatchers(HttpMethod.DELETE, "/api/employees").hasRole("ADMIN")
+//                        .requestMatchers(HttpMethod.GET, "/test").permitAll()
+//                        //browser cannot get css because not be authenciated
+//                        .requestMatchers(HttpMethod.GET, "/css/**").permitAll());
+
+        configurer.anyRequest().permitAll());
         http.httpBasic(Customizer.withDefaults());
         //might not use csrf
         http.csrf(c -> c.disable());
