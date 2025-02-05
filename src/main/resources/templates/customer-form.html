@@ -28,10 +28,15 @@
     <br><br>
     Postal code :
     <input type="text" th:field="*{postalCode}" placeholder="Enter the postal code">
-    <br><br>
     <!-- show error message for postal code -->
     <span th:if="${#fields.hasErrors('postalCode')}"
           th:errors="*{postalCode}" class="error"></span>
+    <br><br>
+    Course code :
+    <input type="text" th:field="*{courseCode}" placeholder="Enter the course code">
+    <!-- show error message for postal code -->
+    <span th:if="${#fields.hasErrors('courseCode')}"
+          th:errors="*{courseCode}" class="error"></span>
     <input type="submit" value="Submit"/>
 
 </form>
