@@ -23,11 +23,13 @@ public class CustomerController {
 
     //reminder : @ModelAttribute is the replacement for Model model and
     @PostMapping("/customer/processForm")
-    public String processForm(@Valid @ModelAttribute("customer") Customer customer,
-                              BindingResult theBindingResult) {
-        if (theBindingResult.hasErrors()){
+    public String processForm(
+            @Valid @ModelAttribute("customer") Customer theCustomer,
+            BindingResult theBindingResult) {
+        if (theBindingResult.hasErrors()) {
             return "customer-form";
-        }else {
+        }
+        else {
             return "customer-confirmation";
         }
     }

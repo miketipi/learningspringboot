@@ -1,7 +1,6 @@
 package org.example.entity;
 
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class Customer {
     private String firstName;
@@ -24,5 +23,31 @@ public class Customer {
 
     public void setLastName(@NotNull(message = "is required") @Size(min = 1, message = "is required") String lastName) {
         this.lastName = lastName;
+    }
+
+    @Min(value = 0 , message = "must be greater than or equal to zero")
+    @Max(value = 10, message = "must be less than or equal to zero")
+    private int freePasses;
+
+    @Min(value = 0, message = "must be greater than or equal to zero")
+    @Max(value = 10, message = "must be less than or equal to zero")
+    public int getFreePasses() {
+        return freePasses;
+    }
+
+    public void setFreePasses(@Min(value = 0, message = "must be greater than or equal to zero") @Max(value = 10, message = "must be less than or equal to zero") int freePasses) {
+        this.freePasses = freePasses;
+    }
+
+
+    @Pattern(regexp="^[a-zA-Z0-9]{5}", message="only 5 chars/digits")
+    private String postalCode;
+
+    public @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits") String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(@Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits") String postalCode) {
+        this.postalCode = postalCode;
     }
 }

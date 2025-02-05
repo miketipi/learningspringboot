@@ -14,12 +14,24 @@
            placeholder="What's your first name?"/>
     <br><br>
     Last name :
-    <input type="text"th:field="*{lastName}" placeholder="What's your last name?">
-
+    <input type="text" th:field="*{lastName}" placeholder="What's your last name?">
     <!-- Show error message (if present) -->
     <span th:if="${#fields.hasErrors('lastName')}"
           th:errors="*{lastName}" class="error"></span>
     <br><br>
+    Free passes :
+    <input type="text" th:field="*{freePasses}" placeholder="How many free passes do you want">
+    <br><br>
+    <!-- Show error message (if present) -->
+    <span th:if="${#fields.hasErrors('freePasses')}"
+          th:errors="*{freePasses}" class="error"></span>
+    <br><br>
+    Postal code :
+    <input type="text" th:field="*{postalCode}" placeholder="Enter the postal code">
+    <br><br>
+    <!-- show error message for postal code -->
+    <span th:if="${#fields.hasErrors('postalCode')}"
+          th:errors="*{postalCode}" class="error"></span>
     <input type="submit" value="Submit"/>
 
 </form>
