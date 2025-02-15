@@ -27,6 +27,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee save(Employee employee) {
         //return employeeDAO.save(employee);
+        //The SpringBoot JPA library already wrote that :
+        //With the save(T t) function, if the object is new, it will call entityManager.persist else entityManager.merge() in
+        // update cases
         return employeeRepository.save(employee);
     }
 

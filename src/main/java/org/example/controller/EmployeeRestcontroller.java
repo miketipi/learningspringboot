@@ -1,6 +1,7 @@
 //package org.example.controller;
 //
 //import lombok.AllArgsConstructor;
+//import lombok.extern.slf4j.Slf4j;
 //import org.example.entity.chapter4entity.Employee;
 //import org.example.entity.chapter4entity.EmployeeNotFoundException;
 //import org.example.service.EmployeeService;
@@ -9,6 +10,7 @@
 //
 //import java.util.List;
 //
+//@Slf4j
 //@RestController
 //@RequestMapping("/api")
 //@AllArgsConstructor
@@ -28,11 +30,13 @@
 //
 //    @PostMapping("/employees")
 //    public void addEmployees(RequestEntity<Employee> requestEntity) {
+//        log.debug("The request entity value : method : {}, Type : {}, Url : {}", requestEntity.getMethod(), requestEntity.getType(), requestEntity.getUrl());
 //        employeeService.save(requestEntity.getBody());
 //    }
 //
 //    @PutMapping("/employees")
 //    public void updateEmployees(RequestEntity<Employee> requestEntity) {
+//        //actually @RequestBody == requestEntity.getBody();
 //        employeeService.save(requestEntity.getBody());
 //    }
 //
